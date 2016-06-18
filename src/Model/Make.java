@@ -15,7 +15,11 @@ public class Make {
         this.models = new ArrayList<>();
     }
 
-    public void addModel(Model model) {
-        this.models.add(model);
+    public boolean addModel(Model model) {
+        return this.models.add(model);
+    }
+
+    public String getName() {
+        return name;
     }
 }
