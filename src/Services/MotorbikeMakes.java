@@ -1,4 +1,7 @@
+package Services;
 
+import Factories.MakeFactory;
+import com.google.gson.Gson;
 import com.sun.net.httpserver.HttpServer;
 import com.sun.jersey.api.container.httpserver.HttpServerFactory;
 import java.io.IOException;
@@ -10,16 +13,14 @@ import javax.ws.rs.Path;
 /**
  * Created by vspreys on 18/06/16.
  */
-// The Java class will be hosted at the URI path "/helloworld"
-@Path("/helloworld")
+@Path("/makes")
 public class MotorbikeMakes {
-    // The Java method will process HTTP GET requests
+
     @GET
-    // The Java method will produce content identified by the MIME Media type "text/plain"
-    @Produces("text/plain")
+    @Produces("application/json")
     public String getClichedMessage() {
-        // Return some cliched textual content
-        return "Hello World";
+
+        return new Gson().toJson(MakeFactory.GetMakes());
     }
 
     public static void main(String[] args) throws IOException {
@@ -27,7 +28,7 @@ public class MotorbikeMakes {
         server.start();
 
         System.out.println("Server running");
-        System.out.println("Visit: http://localhost:9998/helloworld");
+        System.out.println("Visit: http://localhost:9998/makes");
         System.out.println("Hit return to stop...");
         System.in.read();
         System.out.println("Stopping server");

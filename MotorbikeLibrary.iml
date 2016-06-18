@@ -10,5 +10,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.0.M4" level="application_server_libraries" />
     <orderEntry type="library" name="jax-rs-jersey-1.12" level="project" />
     <orderEntry type="library" name="javax.jms-api.jar-2.0" level="project" />
+    <orderEntry type="library" name="gson-2.7" level="project" />
   </component>
 </module>
