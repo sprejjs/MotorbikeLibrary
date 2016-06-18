@@ -9,6 +9,7 @@ import java.io.IOException;
 import javax.ws.rs.GET;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Path;
+import javax.ws.rs.core.MediaType;
 
 /**
  * Created by vspreys on 18/06/16.
@@ -17,7 +18,7 @@ import javax.ws.rs.Path;
 public class MotorbikeMakes {
 
     @GET
-    @Produces("application/json")
+    @Produces(MediaType.APPLICATION_JSON)
     public String getClichedMessage() {
 
         return new Gson().toJson(MakeFactory.GetMakes());
