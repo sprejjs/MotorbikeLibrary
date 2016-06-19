@@ -23,14 +23,10 @@ public class ApplicationModel {
     }
 
     private static HashMap<String, Make> GetMakesAsHashMap() {
-        if (makes == null) {
-            GenerateInitialMakes();
-        }
-
         return makes;
     }
 
-    private static void GenerateInitialMakes() {
+    public static void CreateModel() {
         makes = new HashMap<>();
         Make yamaha = new Make("Yamaha");
         yamaha.addModel(new Model("Crux", "Four-stroke", 250));
